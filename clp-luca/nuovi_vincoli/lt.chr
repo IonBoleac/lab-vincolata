@@ -1,0 +1,11 @@
+
+%def del solver
+handler minore.
+
+%def del vincolo
+constraints lt/2. %dico che quello è il vincolo e non un normale predicato prolog
+
+
+lt(A,B), lt(B,A) <=> false.
+lt(A,A) <=> false. %semplifico
+lt(A,B), lt(B,C) ==> lt(A,C) %aggiungo un vincolo

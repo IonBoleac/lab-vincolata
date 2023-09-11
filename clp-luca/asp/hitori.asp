@@ -1,0 +1,1 @@
+% schema(Riga,Colonna,Valore)

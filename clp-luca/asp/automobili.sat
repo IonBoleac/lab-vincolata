@@ -1,0 +1,3 @@
+giorno(1..5).
+
+1{bello(X)}1 :- giorno(X).
