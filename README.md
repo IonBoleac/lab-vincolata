@@ -1,20 +1,23 @@
+# Proof of concept
+## Sito delle librerie di eclipse
+https://eclipseclp.org/doc/bips/lib_public/fd_global_gac/index.html
 ## Carico le librerie necessarie
+```bash
 :- lib(fd).
 :- lib(fd_global).
 :- lib(cumulative). # serve per fare i vincoli cumulativi
 :- lib(edge_finder). o :- lib(edge_finder). # fa molto più prunning
+```
 
-# aggiorno il path
-PATH=$PATH:/home/ion/eclipse/bin/x86_64_linux/
+## Aggiorno il path di eclipse
+```bash
+PATH=$PATH:$HOME/eclipse/bin/x86_64_linux/
+```
+## Vari esempi di utilizzo
+```prolog
+append(A, B, AB). # concatena due liste A e B concatenate in AB -> (fa liste di liste)
 
-# sito delle librerie di eclipse
-https://eclipseclp.org/doc/bips/lib_public/fd_global_gac/index.html
-
-# concatena due liste A e B concatenate in AB -> (fa liste di liste)
-append(A, B, AB).
-
-# lungehzza di una lista -> 
-length(L, N). 
+length(L, N). # lungehzza di una lista -> N è la lunghezza della lista L
 # se N è una variabile, allora N è il numero di elementi di L.
 # se L è una variabile, allora L è una lista di N elementi di cui N è dichiarato.
 
@@ -75,7 +78,7 @@ ultimo_elemento([H|T], E) :-
 # estrai il primo elemento di una lista
 primo_elemento([Primo|_], Primo).
 
-## golomb(L, N, M) :- L è la lista di numeri di golomb di lunghezza N, dove M è il valore massimo che deve assumere l'ultimo elemento della lista L
+# golomb(L, N, M) :- L è la lista di numeri di golomb di lunghezza N, dove M è il valore massimo che deve assumere l'ultimo elemento della lista L
 dist(_, [], []) :- !.
 dist(E, [H|T], [O|To]) :-
     O #= H-E,
@@ -135,4 +138,6 @@ ennesimo(N, [_|T], X) :- N1 is N-1, ennesimo(N1, T, X).
 
 # 3 *EXIT  member(_591{[0 .. 6]}, [_591, _609{[...]}, _627{...}, ...])   %>
 # l'asterisco dice che ci sono altri punti di scelta. Quando farà backtracking potrebbe partire da questo punto
+```
+
 
