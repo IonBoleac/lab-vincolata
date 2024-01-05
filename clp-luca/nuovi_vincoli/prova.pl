@@ -1,1 +1,0 @@
-valore_assoluto(X,A) :- (X < 0 -> A is -X ; A is X).
